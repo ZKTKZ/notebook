@@ -2,9 +2,9 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 const Meta = ({
-  title = '@lachlanjc/notebook',
-  name = '@lachlanjc/notebook',
-  description = 'Lachlan Campbell’s daily blog, Notebook.',
+  title = '@tazik/notebook',
+  name = '@tazik/notebook',
+  description = 'Tazik Shahjahan\'s daily blog, Notebook.',
   image = 'https://notebook-cards.lachlanjc.now.sh/Notebook.png?theme=dark'
 }) => (
   <Helmet>
@@ -12,7 +12,7 @@ const Meta = ({
     <meta property="og:title" content={name} />
     <meta name="twitter:title" content={name} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="@lachlanjc/notebook" />
+    <meta property="og:site_name" content={name} />
     <meta name="description" content={description} />
     <meta property="og:description" content={description} />
     <meta name="twitter:description" content={description} />
@@ -22,4 +22,4 @@ const Meta = ({
   </Helmet>
 )
 
-export default Meta
+export default Meta;

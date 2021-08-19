@@ -13,10 +13,12 @@ export const palette = {
   smoke: '#e0e6ed',
   snow: '#f9fafc',
   white: '#ffffff',
-  pink: '#ffeaeb',
-  red: '#ff2467',
-  yellow: '#ffaf26',
-  blue: '#3b47a8',
+  pink: '#fef8f8',
+  red: '#ec65ad',
+  yellow: '#ffe01b',
+  blue: '#328af1',
+  indigo: '#28318a',
+  azure: '#3F24D5',
   lilac: '#849de1',
   rose: '#ff707a',
 }
@@ -24,9 +26,9 @@ export const palette = {
 export default merge(base, {
   fonts: {
     body:
-      'Whyte, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     heading:
-      'WhyteInktrap, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     monospace: 'ui-monospace, SFMono-Regular, Menlo, monospace',
   },
   fontSizes: [14, 18, 24, 28, 36, 48, 64, 72, 96, 128],
@@ -53,7 +55,7 @@ export default merge(base, {
   colors: {
     ...palette,
     text: palette.black,
-    background: palette.pink,
+    background: palette.white,
     sunken: palette.snow,
     primary: palette.blue,
     secondary: palette.lilac,
