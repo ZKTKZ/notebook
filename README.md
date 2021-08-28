@@ -1,7 +1,9 @@
 # @lachlanjc/notebook
 
-Daily notebook for [@lachlanjc](https://lachlanjc.com), built with Gatsby, MDX, & Theme UI.
+Daily notebook for [@taziksh](https://taziksh.com), built with Gatsby, MDX, & Theme UI.
 
-[**notebook.lachlanjc.com**](https://notebook.lachlanjc.com)
+[**notebook.taziksh.com**](https://notebook.taziksh.com)
+
+Shout out to [@lachlanjc](https://lachlanjc.com) for sharing their source.
 
 MIT License
