@@ -105,12 +105,6 @@ const Layout = ({ xl, ...props }) => {
           img: { verticalAlign: 'bottom' }
         }}
       >
-        <Icon glyph="view" sx={{ mr: 2 }} />
-        Site views:
-        <img
-          src={`https://lachlanjc-analytics.glitch.me/counter.png?fallback=notebook.lachlanjc.com&color=${counterColor}`}
-          alt="View counter"
-        />
       </Flex>
       <article>
         <BaseStyles>{props.children}</BaseStyles>

@@ -83,6 +83,10 @@ export const Nav = () => {
             )}
             <strong sx={{ lineHeight: 'title' }}>{name}</strong>
           </Link>
+            {!isEmpty(date) && (          <span> 
+              Photo 
+              </span>
+            )            }
         </li>
       ))}
     </ol>
