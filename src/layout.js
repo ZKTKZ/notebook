@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import Avatar from './components/avatar'
 import Icon from './components/icon'
 import Meta from './components/meta'
+import { Pod } from './components/blocks'
 import { getName, getDescription, getImage } from './util'
 import theme from './gatsby-plugin-theme-ui'
 
@@ -94,18 +95,6 @@ const Layout = ({ xl, ...props }) => {
         </Link>
         <ColorSwitcher />
       </header>
-      <Flex
-        as="p"
-        variant="container"
-        sx={{
-          alignItems: 'center',
-          color: 'secondary',
-          mt: 0,
-          mb: 3,
-          img: { verticalAlign: 'bottom' }
-        }}
-      >
-      </Flex>
       <article>
         <BaseStyles>{props.children}</BaseStyles>
       </article>

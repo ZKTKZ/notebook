@@ -1,10 +1,11 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, Flex } from 'theme-ui'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import Layout from './layout'
 import { hasDate, getDate, getName } from './util'
 import { filter, isEmpty, orderBy } from 'lodash'
 import { format } from 'date-fns'
+import { Pod } from './components/blocks'
 
 export const wrapPageElement = ({ element, props }) => (
   <Layout {...props}>{element}</Layout>
@@ -41,6 +42,18 @@ export const Nav = () => {
         ml: 0
       }}
     >
+      <Flex
+        as="p"
+        variant="container"
+        sx={{
+          alignItems: 'center',
+          color: 'secondary',
+          mt: 0,
+          mb: 3,
+          img: { verticalAlign: 'bottom' }
+        }}
+      >
+      </Flex>
       {links.map(({ name, date, path }) => (
         <li
           key={path}
@@ -83,10 +96,11 @@ export const Nav = () => {
             )}
             <strong sx={{ lineHeight: 'title' }}>{name}</strong>
           </Link>
-            {!isEmpty(date) && (          <span> 
+            {!isEmpty(date) && (
+            <span> 
               Photo 
-              </span>
-            )            }
+            </span>
+            )}
         </li>
       ))}
     </ol>

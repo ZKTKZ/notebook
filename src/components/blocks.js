@@ -1,7 +1,31 @@
 import React from 'react'
-import { Box, Flex, Grid, Text, useColorMode } from 'theme-ui'
+import { Box, Flex, Grid, Link, Text, useColorMode } from 'theme-ui'
 import ReactPlayer from 'react-player/lazy'
 import { initial } from 'lodash'
+
+export const Pod = ({ path, title, color, angle }) => (
+    <Link
+      to={path}
+      sx={{
+        color: color,
+        textDecoration: 'none',
+        px: 3,
+        py: 1,
+        border: '2px solid currentColor',
+        borderRadius: 'circle',
+        fontSize: 2,
+        fontWeight: 'bold',
+        transform: angle
+      }}
+    >
+      {title}
+    </Link>
+)
+
+export const Pods = ({ Pod, titles }) => (
+  <span></span>
+)
+
 
 export const Container = ({ wide, ...props }) => (
   <Box

@@ -16,6 +16,7 @@ export const palette = {
   pink: '#fef8f8',
   red: '#ec65ad',
   yellow: '#ffe01b',
+  green: '#5db86b',
   blue: '#328af1',
   indigo: '#28318a',
   azure: '#3F24D5',
