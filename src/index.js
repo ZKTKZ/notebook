@@ -98,7 +98,6 @@ export const Nav = () => {
           </Link>
             {!isEmpty(date) && (
             <span> 
-              Photo 
             </span>
             )}
         </li>
