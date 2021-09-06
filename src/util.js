@@ -48,19 +48,19 @@ export const getDate = path => {
 
 export const getDescription = path => {
   if (path === '/') {
-    return 'Lachlan Campbell’s personal blog, Notebook, with posts about whatever they want.'
+    return 'Tazik Shahjahan’s personal blog, Notebook, with posts about whatever they want.'
   }
   let date = ''
   if (hasDate(path)) {
     date = new Date(getDate(path))
     date = ` on ${format(date, 'MMMM d, yyyy')}`
   }
-  return `Post by Lachlan Campbell${date} on their personal Notebook blog.`
+  return `Post by Tazik Shahjahan${date} on their personal Notebook blog.`
 }
 
 export const getImage = path => {
   if (path === '/') {
-    return 'https://notebook-cards.lachlanjc.vercel.app/Notebook.png?fontSize=400px'
+    return 'https://cdn.buymeacoffee.com/uploads/cover_images/2021/06/d5ff9100d3cdf82ec2ff0dc585adb7d6.jpg@1280w_0e.webp'
   }
   let name = getName(path.toString())
   let caption
