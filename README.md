@@ -1,4 +1,4 @@
-# @taziksh/ithappens
+# taziksh/ithappens
 
 Daily notebook for [@taziksh](https://taziksh.com), built with Gatsby, MDX, & Theme UI.
 

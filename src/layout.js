@@ -52,7 +52,7 @@ const ColorSwitcher = props => {
 const Layout = ({ xl, ...props }) => {
   const path = props.location.pathname
   const home = path === '/'
-  const base = '@tazik/notebook'
+  const base = '@taziksh'
   const name = home ? base : getName(path)
   const counterColor = theme.colors.secondary.replace('#', '%23')
 
@@ -90,8 +90,8 @@ const Layout = ({ xl, ...props }) => {
             mr: 'auto'
           }}
         >
-          @tazik
-          {!home && '/notebook'}
+          @taziksh
+          {!home && ''}
         </Link>
         <ColorSwitcher />
       </header>

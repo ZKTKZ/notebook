@@ -18,14 +18,32 @@ export const Nav = () => {
     ({ path }) => path !== '/' && !path.includes('404')
   )
 
-  const links = orderBy(
-    nodes.map(node => {
+  const rainbow = ['primary', 'green', 'red']
+
+  const pods = orderBy(
+    nodes.filter(node => {
+      const { path } = node
+      return !hasDate(path)
+    }).map(node => {
+      const { path } = node
+      node.name = getName(path)
+      return node
+    }),
+    ['name'],
+    ['asc']
+  )
+
+  const posts = orderBy(
+    nodes.filter(node => {
+      const { path } = node
+      return hasDate(path)
+    }).map(node => {
       const { path } = node
       node.name = getName(path)
       node.date = hasDate(path) ? getDate(path) : null
       if (hasDate(path) && node.name === '') {
         const date = new Date(node.date)
-        date.setDate(date.getDate() + 1) // I hate everything & everything hates me
+        date.setDate(date.getDate() + 1)
         node.name = format(date, 'MMMM dd, yyyy')
       }
       return node
@@ -43,25 +61,42 @@ export const Nav = () => {
       }}
     >
       <Flex
-        as="p"
-        variant="container"
+        as='p'
+        variant='container'
         sx={{
-          alignItems: 'center',
+          display: 'flex',
+          justifyContent: 'flex-end',
           color: 'secondary',
           mt: 0,
-          mb: 3,
+          mb: 4,
           img: { verticalAlign: 'bottom' }
         }}
       >
+        {pods.map(({ name, path }, index) => (
+          <Link
+            to={path}
+            sx={{
+              textDecoration: 'none',
+              px: 3,
+              ml: 3,
+              border: '2px solid ',
+              borderRadius: 'circle',
+              fontSize: 2,
+              fontWeight: 'bold',
+              transform: `rotate(-2deg)`
+            }}
+          >
+            {name}
+          </Link>
+        ))}
       </Flex>
-      {links.map(({ name, date, path }) => (
+
+      {posts.map(({ name, date, path }) => (
         <li
           key={path}
-          sx={
-            isEmpty(date)
-              ? { display: 'inline-block', mr: 3, mb: 4 }
-              : { my: 1 }
-          }
+          sx={{
+            my: 1  
+          }}
         >
           <Link
             to={path}
@@ -70,38 +105,23 @@ export const Nav = () => {
               flexDirection: ['column-reverse', 'row'],
               color: 'primary',
               textDecoration: 'none',
-              ...(isEmpty(date)
-                ? {
-                  px: 3,
-                  py: 1,
-                  border: '2px solid currentColor',
-                  borderRadius: 'circle',
-                  fontSize: 2,
-                  transform: 'rotate(-2deg)'
-                }
-                : {})
             }}
           >
-            {!isEmpty(date) && (
-              <small
-                sx={{
-                  mt: [1, 0],
-                  mr: [null, 3],
-                  fontVariantNumeric: 'tabular-nums',
-                  color: 'secondary'
-                }}
-              >
-                {date}
-              </small>
-            )}
+            <small
+              sx={{
+                mt: [1, 0],
+                mr: [null, 3],
+                fontVariantNumeric: 'tabular-nums',
+                color: 'secondary'
+              }}
+            >
+              {date}
+            </small>       
             <strong sx={{ lineHeight: 'title' }}>{name}</strong>
           </Link>
-            {!isEmpty(date) && (
-            <span> 
-            </span>
-            )}
         </li>
       ))}
+      
     </ol>
   )
 }
