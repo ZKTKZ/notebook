@@ -197,6 +197,11 @@ export default merge(base, {
         color: 'accent',
       },
     },
+    'ol > p > a': {
+      ':hover,:focus': {
+        color: '',
+      },
+    },
     'p > img:first-of-type:last-of-type, p > a:first-child:last-child > img': {
       display: 'block',
       transform: ['translateX(-0.5rem)', null, 'translateX(-1.5rem)'],

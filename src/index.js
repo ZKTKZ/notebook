@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { jsx, Flex } from 'theme-ui'
+import { palette } from './gatsby-plugin-theme-ui'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import Layout from './layout'
 import { hasDate, getDate, getName } from './util'
-import { filter, isEmpty, orderBy } from 'lodash'
+import { filter, orderBy } from 'lodash'
 import { format } from 'date-fns'
-import { Pod } from './components/blocks'
 
 export const wrapPageElement = ({ element, props }) => (
   <Layout {...props}>{element}</Layout>
@@ -18,8 +18,9 @@ export const Nav = () => {
     ({ path }) => path !== '/' && !path.includes('404')
   )
 
-  const rainbow = ['primary', 'green', 'red']
-
+  //palette Object is explicit
+  const rainbow = [palette.primary, palette.green, palette.red]
+  
   const pods = orderBy(
     nodes.filter(node => {
       const { path } = node
@@ -67,7 +68,6 @@ export const Nav = () => {
           display: 'flex',
           justifyContent: 'flex-end',
           color: 'secondary',
-          mt: 0,
           mb: 4,
           img: { verticalAlign: 'bottom' }
         }}
@@ -83,7 +83,9 @@ export const Nav = () => {
               borderRadius: 'circle',
               fontSize: 2,
               fontWeight: 'bold',
-              transform: `rotate(-2deg)`
+              //!important overrides BaseStyles 
+              color: `${rainbow[index]} !important`,
+              transform: `rotate(${Math.pow(-1, index)*3}deg)`
             }}
           >
             {name}
@@ -91,6 +93,11 @@ export const Nav = () => {
         ))}
       </Flex>
 
+      <Flex
+        sx={{
+          flexDirection: 'column',
+        }}
+      >
       {posts.map(({ name, date, path }) => (
         <li
           key={path}
@@ -103,7 +110,6 @@ export const Nav = () => {
             sx={{
               display: 'flex',
               flexDirection: ['column-reverse', 'row'],
-              color: 'primary',
               textDecoration: 'none',
             }}
           >
@@ -121,7 +127,8 @@ export const Nav = () => {
           </Link>
         </li>
       ))}
-      
+      </Flex>
+
     </ol>
   )
 }
