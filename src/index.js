@@ -102,7 +102,7 @@ export const Nav = () => {
         <li
           key={path}
           sx={{
-            my: 1  
+            my: 1   
           }}
         >
           <Link
