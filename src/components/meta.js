@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 const Meta = ({
-  title = '@taziksh',
+  title = '@taziksh/ithappens',
   name = '@taziksh',
   description = 'Tazik Shahjahan\'s daily blog, Notebook.',
   image = 'https://cdn.buymeacoffee.com/uploads/cover_images/2021/06/d5ff9100d3cdf82ec2ff0dc585adb7d6.jpg@1280w_0e.webp'
