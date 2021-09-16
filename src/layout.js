@@ -112,7 +112,7 @@ const Layout = ({ xl, ...props }) => {
         <a href="https://twitter.com/tazikshahjahan" title="Twitter">
           <Icon glyph="twitter" size={36} />
         </a>
-        <a href="https://github.com/ZKTKZ" title="GitHub">
+        <a href="https://github.com/taziksh" title="GitHub">
           <Icon glyph="github" size={36} />
         </a>
         <a href="mailto:tshahjah@uwaterloo.ca" title="Email">
