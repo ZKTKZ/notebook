@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Flex } from 'theme-ui'
+import { jsx, Flex, Heading } from 'theme-ui'
 import { palette } from './gatsby-plugin-theme-ui'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import Layout from './layout'
@@ -19,7 +19,7 @@ export const Nav = () => {
   )
 
   //palette Object is explicit
-  const rainbow = [palette.primary, palette.green, palette.red]
+  const rainbow = [palette.blue, palette.green, palette.red]
   
   const pods = orderBy(
     nodes.filter(node => {
@@ -92,24 +92,23 @@ export const Nav = () => {
           </Link>
         ))}
       </Flex>
-
       <Flex
         sx={{
-          flexDirection: 'column',
+          flexDirection: ['column'],
         }}
       >
       {posts.map(({ name, date, path }) => (
         <li
           key={path}
           sx={{
-            my: 1   
+            mb: 1   
           }}
         >
           <Link
             to={path}
             sx={{
-              display: 'flex',
-              flexDirection: ['column-reverse', 'row'],
+              //display: 'flex',
+              //flexDirection: ['column-reverse', 'row'],
               textDecoration: 'none',
             }}
           >
@@ -122,8 +121,14 @@ export const Nav = () => {
               }}
             >
               {date}
-            </small>       
-            <strong sx={{ lineHeight: 'title' }}>{name}</strong>
+            </small>                 
+            <strong 
+              sx={{ 
+                lineHeight: 'title',
+              }}
+            >
+              {name}
+            </strong>
           </Link>
         </li>
       ))}

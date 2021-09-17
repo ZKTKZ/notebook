@@ -60,7 +60,7 @@ const Layout = ({ xl, ...props }) => {
     <Box
       as="main"
       sx={{
-        p: 3,
+        px: 3,
         fontSize: 1,
         maxWidth: xl ? 'xl' : 'container',
         lineHeight: 'body',
@@ -77,16 +77,19 @@ const Layout = ({ xl, ...props }) => {
         sx={{
           display: 'flex',
           alignItems: 'center',
-          mb: 4
+          mt: 3,
         }}
       >
-        <Avatar />
         <Link
           to="/"
           sx={{
             fontWeight: 'bold',
             color: 'inherit',
-            textDecoration: 'none',
+            textDecoration: 'underline',
+            textUnderlinePosition: 'under',
+            textDecorationStyle: 'wavy',
+            textDecorationColor: 'red',
+            textDecorationThickness: '7%',
             mr: 'auto'
           }}
         >
@@ -108,11 +111,10 @@ const Layout = ({ xl, ...props }) => {
           a: { color: 'primary', mx: 2 }
         }}
       >
-        <Avatar />
         <a href="https://twitter.com/tazikshahjahan" title="Twitter">
           <Icon glyph="twitter" size={36} />
         </a>
-        <a href="https://github.com/ZKTKZ" title="GitHub">
+        <a href="https://github.com/taziksh" title="GitHub">
           <Icon glyph="github" size={36} />
         </a>
         <a href="mailto:tshahjah@uwaterloo.ca" title="Email">
