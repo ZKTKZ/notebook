@@ -29,10 +29,12 @@ export default merge(base, {
     body:
       'Whyte, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     heading:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      'Whyte, bold, italic, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     monospace: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+    prose: 'Crimson Pro, Libre Baskerville'
   },
   fontSizes: [14, 18, 24, 28, 36, 48, 64, 72, 96, 128],
+  //fontSizes: [12, 16, 21, 28, 37, 50, 67, 89],
   fontWeights: {
     heading: 'bold',
     body: 400,
@@ -122,10 +124,36 @@ export default merge(base, {
       transitionTimingFunction: 'ease-out',
       transitionDuration: '.25s',
     },
+    p: {
+      fontFamily: 'prose',
+    },
+    'p + * > li': {
+      fontFamily: 'prose',
+    },
+    'div[class*="footnotes"]': {
+      fontFamily: 'prose',
+    },
+    h1: {
+      textAlign: 'center',
+      center: {
+        textAlign: 'center',
+      },
+      left: {
+        textAlign: 'start',
+      }
+    },
+    'h1.css-0': {
+      textAlign: 'start',
+      mb: 3,
+    },    
     h2: {
+      //fontFamily: ['Lora'],
       fontSize: [3, 4],
       mt: [3, 4],
       mb: 2,
+    },
+    h3: {
+      //fontFamily: ['Lora']
     },
     hr: {
       border: 0,
@@ -197,10 +225,16 @@ export default merge(base, {
         color: 'accent',
       },
     },
+    'a[class*="Pods"]' : {
+      fontFamily: 'body'
+    },
     'ol > p > a': {
       ':hover,:focus': {
         color: '',
       },
+    },
+    'ol > div > li > a > strong': {
+      //fontFamily: 'Lora',
     },
     'p > img:first-of-type:last-of-type, p > a:first-child:last-child > img': {
       display: 'block',

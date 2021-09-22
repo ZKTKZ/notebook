@@ -60,7 +60,7 @@ const Layout = ({ xl, ...props }) => {
     <Box
       as="main"
       sx={{
-        px: 3,
+        px: 1,
         fontSize: 1,
         maxWidth: xl ? 'xl' : 'container',
         lineHeight: 'body',
